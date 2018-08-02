@@ -38,3 +38,22 @@ let animalNoises = [
 ];
 
 // YOUR CODE BELOW
+
+function petSounds(animal, place) {
+
+  for (let i=0; i<animalNoises.length; i++) {
+    let animObj = animalNoises[i][animal]; 
+    
+    if (animObj) {
+      //animal.charAt(0) = animal.charAt(0).toUpperCase();
+      let capAnimal = animal[0].toUpperCase() + animal.substr(1);
+      let animPhrase = capAnimal + "s in " + place + " say " + animObj[place];
+      console.log(animPhrase);
+      return animPhrase;
+    }
+  }  
+}
+petSounds('cat', 'Algeria');
+petSounds('dog', 'Iceland'); // => Dogs in Iceland say Voff voff!
+petSounds('cat', 'Korea'); // => Cats in Korea say Nyaong!
+
